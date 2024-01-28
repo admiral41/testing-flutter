@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testingclass/arithmetic_view.dart';
+import 'package:testingclass/output.dart';
 
 class ArthimeticView extends StatefulWidget {
   const ArthimeticView({super.key});
@@ -50,6 +51,11 @@ class _ArthimeticViewState extends State<ArthimeticView> {
                             int.parse(_firstController.text),
                             int.parse(_secondController.text));
                       });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Output(result: result)),
+                      );
                     },
                     child: const Text('Add',
                         style: TextStyle(color: Colors.black)),
@@ -65,12 +71,15 @@ class _ArthimeticViewState extends State<ArthimeticView> {
                             int.parse(_firstController.text),
                             int.parse(_secondController.text));
                       });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Output(result: result)),
+                      );
                     },
                     child: const Text('Subtract',
                         style: TextStyle(color: Colors.black)),
                   )),
-              gap,
-              Text('Result: $result', style: const TextStyle(fontSize: 20)),
             ]),
       ),
     );
